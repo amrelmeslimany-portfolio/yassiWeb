@@ -1,0 +1,66 @@
+@include screen("max", map-get($screens, "lg")) {
+    .main {
+        flex-direction: column;
+
+
+        .sidebar {
+            width: 100%;
+        }
+    }
+
+}
+
+@include screen("max", map-get($screens, "sm")) {
+    .lonly-article {
+
+
+        .article-img {
+            width: 100% !important;
+        }
+    }
+}
+
+
+@include screen("max", map-get($screens, "xx")) {
+    #main-header {
+        .navbar {
+
+            @include propertDir("y", padding, 8px);
+
+
+            .navbar-brand {
+                width: 200px;
+            }
+
+
+        }
+
+
+
+
+        .intro-section {
+
+
+
+            .subjects-list {
+                .subject-item {
+
+
+                    &.wide-width {
+                        width: 285px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+@include screen("max", 400) {
+    .navbar {
+        .navbar-brand {
+            width: 180px !important;
+        }
+    }
+}

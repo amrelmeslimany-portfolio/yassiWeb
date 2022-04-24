@@ -1,0 +1,25 @@
+.footer {
+    background-color: #191C28;
+
+
+    .content {
+        .logo-box {
+            transition: transition();
+            background-color: #202020;
+
+            &:hover {
+                background-color: #901A3A;
+            }
+        }
+
+        .tx-18 {
+            font-size: 18px;
+        }
+    }
+
+    @include socials(50, true) {
+        background-color: $primary;
+    }
+
+    ;
+}

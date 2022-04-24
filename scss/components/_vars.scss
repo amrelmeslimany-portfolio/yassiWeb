@@ -1,0 +1,40 @@
+$dir: rtl;
+$start: right;
+$end: left;
+
+
+$primary: #38A33C;
+$lightPRimary: #C6E9C7;
+$blue: #1E96C8;
+$lightBlue: #37AEE2;
+$dark: #303030;
+$black: #000;
+$textGray: #878787;
+$paper: #FBFBFB;
+$gray: #B8B8B8;
+$border: #B2B2B2;
+$article: #707070;
+$lightGray: #F9F9F9;
+$alto: #D6D6D6;
+$c5: #c5c5c5;
+$link: #9B9B9B;
+$white: white;
+$body: #EEEEEE;
+$linear-gradient: linear-gradient(to #{$end}, #38a33c 0%, #1c7720 100%);
+
+
+$social: ("facebook" : #0072E5,
+    "instagram":linear-gradient(225deg, #9339a5 0%, #e34c61 82%, #fa8f21 100%),
+    "blogger": #F58220,
+    "paypal": #009EE5,
+    "youtube": #DE0303,
+    "telegram": linear-gradient(225deg, #1e96c8 0%, #37aee2 100%));
+
+$screens: (xs: 0,
+    xx: 468,
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xlg: 1024,
+    xl: 1200, //was 1300 and 1200
+    xxl: 1500);

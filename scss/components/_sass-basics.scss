@@ -1,0 +1,160 @@
+// Screens
+@mixin screen($type:"min", $size:768) {
+    @if $type=="range" {
+
+        $min: nth($size, 1);
+        $max: nth($size, 2);
+
+        @media (min-width:#{$min}px) and (max-width:#{$max}px) {
+            @content;
+        }
+
+
+    }
+
+    @else {
+        @media (#{$type}-width:#{$size}px) {
+            @content;
+        }
+    }
+
+}
+
+@mixin flex-center($contentCenter: true) {
+    display: flex;
+    align-items: center;
+
+    @if $contentCenter==true {
+        justify-content: center;
+    }
+}
+
+@mixin ellipse-vertical($mxHeight: 70px, $line: 2) {
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: $mxHeight;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+}
+
+@mixin socials($size:45, $hv: false, $colorsList: $social, ) {
+    .social-link {
+        width: #{$size}px;
+        height: #{$size}px;
+        border-radius: 2px;
+        color: $white;
+        transition: transition();
+        @include flex-center;
+        @content;
+
+        i {
+            font-size: #{$size / 1.8}px;
+        }
+
+
+        @each $item,
+        $color in $colorsList {
+            &.#{$item} {
+                @if $hv==true {
+                    &:hover {
+                        background: $color;
+                    }
+                }
+
+                @else {
+                    background: $color;
+                }
+            }
+
+        }
+    }
+}
+
+
+@mixin propertDir($dir, $property, $value) {
+    @if $dir=="x" {
+        #{$property}-left: $value;
+        #{$property}-right: $value;
+    }
+
+    @else {
+        #{$property}-top: $value;
+        #{$property}-bottom: $value;
+    }
+}
+
+
+@mixin overflow($onlyPOS: false) {
+
+
+
+    @if $onlyPOS==true {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+
+    @else {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@mixin subimg {
+    @include overflow;
+    z-index: 1;
+    transition: transition();
+}
+
+
+
+
+
+@mixin inputs($element: input, $size: 16, $textColor: $c5) {
+    #{$element} {
+        &::placeholder {
+            color: $textColor;
+            font-size: #{$size}px;
+        }
+
+
+        @content;
+    }
+}
+
+
+@mixin scrollbar {
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $paper;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $c5;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $textGray;
+    }
+}
+
+// Functions
+
+@function transition($duration:0.25, $delay:0.01) {
+    @return #{$duration}s #{$delay}s ease-in;
+
+}

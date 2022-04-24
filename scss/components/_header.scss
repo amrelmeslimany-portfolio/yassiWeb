@@ -1,0 +1,232 @@
+#main-header {
+    .navbar {
+
+        .btn-search,
+        .box-search {
+            i {
+                color: $gray;
+            }
+        }
+
+        .btn-search {
+            &.anm-icon {
+                i {
+                    animation: scale 0.5s ease-in-out forwards;
+                }
+            }
+        }
+
+        .box-search {
+            transition: 0.5s ease-in-out;
+            transform: scaleX(0);
+            opacity: 0;
+
+            &.active {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+
+        .navbar-toggler {
+            &.active {
+                .bars {
+                    &.bar1 {
+                        transform: rotate(45deg) translate(6px, 5px);
+                    }
+
+                    &.bar2 {
+                        opacity: 0;
+                    }
+
+                    &.bar3 {
+                        transform: rotate(-45deg) translate(7px, -6px);
+                    }
+                }
+            }
+        }
+
+
+
+        .box-search {
+            #{$end}: 32px;
+            top: 100px;
+
+            @include inputs(input) {
+                color: $article;
+            }
+
+            ;
+        }
+    }
+
+
+    .intro-section {
+        padding: {
+            top: 42px;
+            bottom: 62px;
+
+        }
+
+
+        .subjects-list {
+            .subject-item {
+                border-radius: 5px;
+                height: 250px;
+                overflow: hidden;
+                display: inline-block;
+                box-shadow: 0px 2px 5px rgba($black, .15);
+
+                &.wide-width {
+                    width: 375px;
+                }
+
+                &:not(.wide-width) {
+                    width: 190px;
+                }
+
+                .sub-img {
+                    @include subimg;
+                }
+
+                .sub-content {
+                    @include overflow(true);
+                    z-index: 2;
+                    font-family: "Tajawal";
+
+
+                    .subject-brief {
+
+                        color: $white;
+
+                        .writer-name {
+                            color: $paper;
+                        }
+                    }
+                }
+
+
+                &:hover {
+                    .sub-img {
+                        filter: brightness(0.5);
+                        transform: scale(1.1);
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+
+.navbar-toggler,
+.btn-search,
+.box-search,
+.btn-close-offcanvas {
+    background-color: $lightGray;
+}
+
+.navbar-toggler,
+.btn-close-offcanvas {
+    flex-direction: column;
+    gap: 3px;
+    padding: 14px;
+    border: 0;
+
+    .bars {
+        transition: ease-in-out 0.5s;
+        width: 30px;
+        height: 5px;
+        display: block;
+        background-color: $gray;
+        margin-bottom: 4px;
+        border-radius: 2px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+.offcanvas {
+    width: 330px;
+    transition: 0.5s;
+
+    .btn-close-offcanvas {
+        .bars {
+            &.bar1 {
+                transform: rotate(0) translate(0);
+            }
+
+            &.bar2 {
+                opacity: 1;
+            }
+
+            &.bar3 {
+                transform: rotate(0) translate(0);
+            }
+        }
+    }
+
+
+
+    &.show {
+        .btn-close-offcanvas {
+            .bars {
+                &.bar1 {
+                    transform: rotate(45deg) translate(6px, 5px);
+                }
+
+                &.bar2 {
+                    opacity: 0;
+                }
+
+                &.bar3 {
+                    transform: rotate(-45deg) translate(7px, -6px);
+                }
+            }
+        }
+
+
+    }
+
+    .offcanvas-header {
+        background-color: $paper;
+
+        .offcanvas-title {
+            color: $gray;
+            font-family: "Tajawal";
+        }
+    }
+
+    .offcanvas-body {
+        .links-box {
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include socials;
+
+            .pages-links {
+                .page-link {
+                    color: $link;
+                    font-family: "Tajawal";
+                    margin-bottom: 0.25rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.offcanvas-backdrop {
+    background-color: rgba($white, .7);
+}

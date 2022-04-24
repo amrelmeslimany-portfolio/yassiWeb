@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+
+@font-face {
+    font-family: "JF-Flat";
+    src: url("../assets/fonts/textFonts/JF-Flat-Regular.otf");
+}
+
+body {
+    direction: $dir;
+    font-family: "JF-Flat";
+}
+
+
+.wrap-fullpage {
+    transition: 0.1s 0.1s;
+
+    &.opened {
+        filter: blur(5px);
+    }
+
+    &:not(.opened) {
+        overflow: hidden;
+    }
+}
+
+
+
+/* Classes */
+.pb-60 {
+    padding-bottom: 62px;
+}
+
+.fs-18px {
+    font-size: 18px;
+}
+
+.bg-gradient {
+    background: $linear-gradient !important;
+}
+
+
+.padding-anm {
+    transition: transition();
+
+    &:hover {
+        @include propertDir("x", padding, 20px !important);
+    }
+}
+
+.hidetext-anm {
+    background-color: rgba($white, 0.5);
+    transition: 0.3s;
+
+    .icon {
+        color: #1c7720;
+        font-size: 18px;
+        transition: transition();
+    }
+
+    .text {
+        display: none;
+    }
+
+    &:hover {
+        background-color: $black;
+
+
+
+        .icon {
+            color: $white;
+        }
+    }
+}
+
+.boxmenu-wrap {
+    position: relative;
+
+    .boxmenu-btn {
+        svg {
+            transition: transition();
+
+            g,
+            circle,
+            rect {
+                transition: transition();
+            }
+
+            .share {
+                transform: translate(-1035px, -907px);
+
+                .svg-cr1 {
+                    transform: translate(1046px, 907px);
+                }
+
+                .svg-cr2 {
+                    transform: translate(1046px, 920px);
+                }
+
+                .svg-cr3 {
+                    transform: translate(1035px, 913px);
+                }
+
+                .svg-rct1 {
+                    transform: translate(1037.078px, 915.027px) rotate(-30deg);
+                }
+
+                .svg-rct2 {
+                    transform: translate(1038.652px, 915px) rotate(34deg);
+                }
+            }
+
+            .close {
+                transform: translate(-1038.529px, -910.529px);
+
+
+
+                .svg-cr1 {
+                    transform: translate(1041px, 913px);
+
+                }
+
+                .svg-cr2 {
+                    transform: translate(1041px, 913px);
+
+                }
+
+                .svg-cr3 {
+                    transform: translate(1041px, 913px);
+                }
+
+                .svg-rct1 {
+                    transform: translate(1038.529px, 919.014px) rotate(-45deg);
+
+                }
+
+                .svg-rct2 {
+                    transform: translate(1039.986px, 910.529px) rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .box-menu {
+        position: absolute;
+        min-width: 165px;
+        bottom: -245%;
+        #{$end}: 0;
+        z-index: 1;
+    }
+}
+
+
+.rounded-anm {
+    transition: transition();
+
+    &:hover {
+        border-radius: 16px;
+    }
+}
+
+.offcanvas-body {
+    @include scrollbar;
+}

@@ -1,0 +1,26 @@
+@import "./components/vars";
+@import "./components/sass-basics";
+@import "./components/basecss";
+
+
+@import "./components/header";
+
+/* Cards Section */
+@import "./pages/cards-section";
+
+
+/* Main Section */
+@import "./pages/main-section";
+
+/* Footer */
+
+@import "./components/footer";
+
+
+
+/* Responsive */
+@import "./components/responsive";
+
+
+/* Animations */
+@import "./components/animation";
